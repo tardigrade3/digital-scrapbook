@@ -28,13 +28,13 @@ $ python manage.py runserver
 * Some uploaded portrait images are displayed in landscape in the exported scrapbook pdf.
 * Some images do not load when DEBUG is set to False in settings.py
 
-## Support
+## Credits
 
-Julia Kirney: jkirn1@ocdsb.ca
+Jay Kirney (me!)
 
-Irha Imtiaz: iimti1@ocdsb.ca
+Irha Imtiaz
 
-Maryum Dada: mdada1@ocdsb.ca
+Maryum Dada
 
 ## Sources
 
