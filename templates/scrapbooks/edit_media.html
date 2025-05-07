@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- Irha Imtiaz & Julia Kirney, April 2024 -->
+
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+
+<body class="font-monospace">
+
+    <div class="container">
+        <h1>Edit Media
+            <a href="/" class="btn btn-outline-warning m-2">
+                <img src="/media/images/logo_test.png" alt="" width="100" height="50">
+            </a>
+        </h1>
+        <p>Scrapbook: <strong>{{ scrapbook.scrapbook_name }}</strong></p>
+        <p class="mb-2">The code for this scrapbook is: <strong>{{ scrapbook.scrapbook_code }}</strong></p>
+    </div>
+
+    <!-- just trying to figure out how to remove media stuff -->
+    <!-- {# help:
+    https://learndjango.com/tutorials/django-file-and-image-uploads-tutorial#:~:text=The%20uploaded%20image%20location%20will,of%20all%20user%2Duploaded%20items.#} -->
+
+    <div class="container">
+        <h3 class="mt-2"><strong>Your uploaded media:</strong></h3>
+
+        <img src="{{ this_media.image.url }}" alt="" , width="200">
+
+        <form method="post" class="mt-2">
+            {% csrf_token %}
+            {{form}}
+            <br>
+            <input type="submit" value="Save changes" class="btn btn-outline-warning mt-2">
+            <a href="/Scrapbook_project/{{ scrapbook.scrapbook_code }}/{{ this_media.id }}/confirm_delete/"
+                class="btn btn-outline-warning font-monospace mt-2">Delete this media</a>
+        </form>
+        <a href="/Scrapbook_project/{{ scrapbook.scrapbook_code }}/" class="btn btn-outline-warning mb-4 mt-4">
+            Back to scrapbook</a>
+    </div>
+
+</body>
+
+</html>
